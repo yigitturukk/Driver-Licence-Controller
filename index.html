@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Licence Controller</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">  
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Input Form -->
+    <div class="card">
+        <h2>Driver Licence Controller</h2>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Name</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Name" id="name" aria-label="name" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Surname</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Surname" id="surname" aria-label="Surname" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Age</span>
+            </div>
+            <input type="number" class="form-control" placeholder="Age" id="age" aria-label="Age" aria-describedby="basic-addon1">
+        </div>
+        <input class="btn btn-primary" type="button" value="Submit" onclick="checkAge()">
+        
+        <!-- Sonuçları göstermek için bir alan ekleyin -->
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAge() {
+            var name = document.getElementById("name").value;
+            var surname = document.getElementById("surname").value;
+            var age = document.getElementById("age").value;
+            var resultDiv = document.getElementById('result');
+            
+            // Tek satırda yaş kontrolü ve mesaj oluşturma
+            var message = (age >= 18) ? 'Dear ' + name + ' ' + surname + ', ' + age + ' you can get a driver licence.' :'Dear ' + name + ' ' + surname + ', ' + age + ' you cant get a driver licence.';
+            
+            resultDiv.innerHTML = message;
+        }
+    </script>
+</body>
+</html>
